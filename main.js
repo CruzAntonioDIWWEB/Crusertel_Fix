@@ -282,7 +282,7 @@ const CrusertelApp = {
             };
         },
 
-        validateContactForm({ name, email, phone, subject, message }) {
+        validateContactForm({ name, email, subject, message }) {
             const errors = [];
             
             if (!name) errors.push('El nombre es obligatorio');

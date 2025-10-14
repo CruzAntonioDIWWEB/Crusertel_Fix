@@ -1,10 +1,5 @@
-/* ================================== */
-/* CRUSERTEL - CONSOLIDATED MAIN CSS */
-/* PRESERVING ORIGINAL STYLES WITH CORRECTED PATHS */
-/* ================================== */
-
 /* ===================================== */
-/* BASE STYLES (FROM ALL CSS FILES) */
+/* BASE STYLES (FROM ALL CSS FILES)      */
 /* ===================================== */
 
 body {
@@ -394,9 +389,9 @@ section h2 {
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-/* ===================================== */
+/* ================= */
 /* FAQ STYLES */
-/* ===================================== */
+/* ================= */
 
 .faq-respuesta {
     max-height: 0;
@@ -1153,4 +1148,22 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+.about-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
 }
