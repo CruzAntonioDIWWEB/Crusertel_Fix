@@ -1,22 +1,146 @@
 /* ===================================== */
-/* BASE STYLES (FROM ALL CSS FILES)      */
+/* BASE STYLES WITH IMPROVED TYPOGRAPHY */
 /* ===================================== */
 
-body {
-    font-family: 'Inter', sans-serif;
+:root {
+    --primary-red: #dc3545;
+    --dark-red: #b1001d;
+    --light-bg: #fff8f8;
+    --text-dark: #2c3e50;
+    --text-light: #5a6c7d;
+    --white: #ffffff;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #fff8f8;
-    color: #333;
-    overflow-x: hidden;
 }
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.7;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================================== */
+/* TYPOGRAPHY SYSTEM */
+/* ===================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.section-title-white {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.subsection-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.intro-text {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--text-dark);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+}
+
+.intro-text-white {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--white);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.body-text {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 1.25rem;
+}
+
+.hero-tagline {
+    font-size: 1.375rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+.fiber-headline {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    margin: 0;
+}
+
+.testimonial-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-text {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+/* ===================================== */
+/* CONTAINER */
+/* ===================================== */
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 0;       
+    padding: 10px 0;
 }
 
 /* ===================================== */
@@ -56,7 +180,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 999;
-    background-color: #fff;
+    background-color: var(--white);
     transition: box-shadow 0.3s ease, padding 0.3s ease;
     padding: 8px 0;
     animation: slideDownFade 0.8s ease-out forwards;
@@ -93,15 +217,15 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #dc3545;
-    font-weight: bold;
-    font-size: 1.1em;
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 1rem;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 nav ul li a:hover {
-    color: #b1001d;
-    transform: scale(1.1);
+    color: var(--dark-red);
+    transform: scale(1.05);
 }
 
 /* ===================================== */
@@ -111,24 +235,20 @@ nav ul li a:hover {
 #hero {
     background-color: #ffe6e6;
     text-align: center;
-    padding: 40px 10px;    
-    margin-bottom: 18px;  
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 60px 20px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 #hero h1 {
-    font-size: 3em;
-    color: #dc3545;
-}
-
-#hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+    font-size: 3rem;
+    color: var(--primary-red);
+    font-weight: 700;
 }
 
 /* ===================================== */
-/* BACKGROUND IMAGES - CORRECTED PATHS */
+/* BACKGROUND IMAGES */
 /* ===================================== */
 
 .hero-bg {
@@ -202,23 +322,26 @@ nav ul li a:hover {
 }
 
 .fondo-unete-texto {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
     border-radius: 12px;
     max-width: 900px;
     margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .fondo-unete-texto h2 {
-    color: #d40000;
-    font-size: 1.8em;
-    margin-bottom: 15px;
+    color: var(--primary-red);
+    font-size: 1.875rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .fondo-unete-texto p {
-    color: #000;
-    font-weight: bold;
-    font-size: 1.1em;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.7;
 }
 
 #services-intro {
@@ -229,7 +352,7 @@ nav ul li a:hover {
     color: white;
     padding: 80px 20px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 #contact-intro {
@@ -237,7 +360,7 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 80px 20px;
     color: white;
     text-align: center;
@@ -245,12 +368,13 @@ nav ul li a:hover {
 }
 
 #contact-intro .container {
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 30px;
-    border-radius: 10px;
-    color: #333;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    color: var(--text-dark);
     max-width: 800px;
     margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 #join-intro {
@@ -263,10 +387,11 @@ nav ul li a:hover {
 }
 
 #join-intro .container {
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 10px;
-    padding: 30px;
-    color: #333;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 40px;
+    color: var(--text-dark);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 /* ===================================== */
@@ -274,76 +399,67 @@ nav ul li a:hover {
 /* ===================================== */
 
 .btn {
-    background-color: #dc3545;
+    background-color: var(--primary-red);
     color: white;
-    padding: 12px 25px;
+    padding: 14px 32px;
     border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.2);
+}
+
+.btn:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
 }
 
 .btn-info {
-    background-color: #dc3545;
+    background-color: var(--primary-red);
     color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 24px;
+    border-radius: 8px;
     text-decoration: none;
     display: inline-block;
-    font-weight: bold;
-    margin-top: 4px;
-    font-size: 1em;
+    font-weight: 600;
+    margin-top: 8px;
+    font-size: 0.9375rem;
     border: none;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.08);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.15);
     cursor: pointer;
 }
 
 .btn-info:hover {
-    background-color: #b1001d;
-    transform: scale(1.05);
-}
-
-.btn:hover {
-    background-color: #b1001d;
-    transform: scale(1.05);
-}
-
-.btn-small {
-    background-color: #d40000;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.btn-small:hover {
-    background-color: #a80000;
-    transform: scale(1.05);
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.25);
 }
 
 .btn-ver-tarifas {
     display: inline-block;
-    background-color: #dc3545;
+    background-color: var(--primary-red);
     color: white;
-    padding: 12px 30px;
+    padding: 14px 36px;
     border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: bold;
+    font-size: 1.0625rem;
+    font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 20px auto;
+    transition: all 0.3s ease;
+    margin: 24px auto;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.2);
 }
 
 .btn-ver-tarifas:hover {
-    background-color: #b1001d;
-    transform: scale(1.05);
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
 }
 
 /* ===================================== */
@@ -351,18 +467,11 @@ nav ul li a:hover {
 /* ===================================== */
 
 section {
-    background-color: #ffffff;
-    padding: 24px 10px;     
-    margin-bottom: 18px;    
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-section h2 {
-    text-align: center;
-    font-size: 2em;
-    color: #dc3545;
-    margin-bottom: 20px;
+    background-color: var(--white);
+    padding: 48px 20px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 /* ===================================== */
@@ -372,43 +481,46 @@ section h2 {
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 32px;
 }
 
 .service-item {
     background-color: #fff0f0;
-    padding: 25px;
-    border-radius: 8px;
+    padding: 32px;
+    border-radius: 12px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .service-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-/* ================= */
+/* ===================================== */
 /* FAQ STYLES */
-/* ================= */
+/* ===================================== */
+
 #faq-list {
     margin-bottom: 80px;
 }
+
 .faq-respuesta {
     position: absolute;
     left: 0;
     right: 0;
     top: 100%;
     background: #fff8f8;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 12px 12px;
     box-shadow: 0 4px 12px rgba(220,53,69,0.08);
     opacity: 0;
     pointer-events: none;
     transform: translateY(10px) scaleY(0.95);
     transition: opacity 0.5s cubic-bezier(0.4,0,0.2,1), transform 0.5s cubic-bezier(0.4,0,0.2,1);
     z-index: 2;
-    padding: 18px 20px;
+    padding: 24px;
     min-height: 40px;
     width: 100%;
     display: block;
@@ -424,15 +536,30 @@ section h2 {
 
 .faq-item {
     position: relative;
-    max-width: 600px;
-    margin: 16px auto;      
-    padding: 12px 16px;     
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px 24px;
     background-color: #fff0f0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     transition: transform 0.3s ease;
-    min-height: 80px;       
+    min-height: 80px;
     overflow: visible;
+}
+
+.faq-item h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    cursor: pointer;
+    user-select: none;
+}
+
+.faq-respuesta p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin: 0;
 }
 
 .faq-left {
@@ -460,68 +587,72 @@ section h2 {
 
 #contact-form {
     background-color: #fff0f0;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     max-width: 700px;
     margin: 0 auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #contact-form:hover {
-    transform: scale(1.01);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     display: flex;
     flex-direction: column;
 }
 
 .form-group label {
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 8px;
-    color: #dc3545;
+    color: var(--primary-red);
+    font-size: 0.9375rem;
 }
 
 .form-group input,
 .form-group textarea {
-    padding: 12px;
+    padding: 14px;
     border: 2px solid #ffbcbc;
-    border-radius: 6px;
-    font-size: 1em;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-dark);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #dc3545;
-    box-shadow: 0 0 8px rgba(220, 53, 69, 0.3);
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
     outline: none;
 }
 
 .form-group input:hover,
 .form-group textarea:hover {
-    border-color: #dc3545;
+    border-color: var(--primary-red);
 }
 
 #contact-form .btn {
-    background-color: #dc3545;
+    background-color: var(--primary-red);
     color: white;
-    padding: 12px 25px;
+    padding: 14px 32px;
     border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     width: 100%;
     margin-top: 10px;
 }
 
 #contact-form .btn:hover {
-    background-color: #b1001d;
-    transform: scale(1.05);
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -531,103 +662,71 @@ section h2 {
 
 #contact-info {
     background-color: #fff0f0;
-    border-radius: 10px;
-    padding: 40px 30px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    padding: 48px 32px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     max-width: 900px;
     margin: 0 auto 40px auto;
     transition: transform 0.3s ease;
 }
 
 #contact-info:hover {
-    transform: scale(1.01);
+    transform: translateY(-2px);
 }
 
 #contact-info h3 {
     text-align: center;
-    color: #dc3545;
-    font-size: 1.8em;
-    margin-bottom: 30px;
+    color: var(--primary-red);
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
 }
 
 .contact-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: 28px;
 }
 
 .contact-card {
-    background: #ffffff;
+    background: var(--white);
     border: 2px solid #ffbcbc;
-    border-radius: 8px;
-    padding: 20px 25px;
+    border-radius: 12px;
+    padding: 24px 28px;
     width: 260px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .contact-card:hover {
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
 }
 
 .contact-card h4 {
-    margin-bottom: 10px;
-    color: #b1001d;
-    font-size: 1.2em;
+    margin-bottom: 12px;
+    color: var(--dark-red);
+    font-size: 1.125rem;
+    font-weight: 600;
 }
 
 .contact-card p {
     margin: 0;
-    font-size: 1em;
-    color: #333;
+    font-size: 0.9375rem;
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
 .contact-card a {
-    color: #dc3545;
+    color: var(--primary-red);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .contact-card a:hover {
     text-decoration: underline;
-}
-
-/* ===================================== */
-/* CONTACT INTRO STYLES */
-/* ===================================== */
-
-#contact-intro {
-    text-align: center;
-    padding: 40px 30px;
-    background-color: #ffe6e6;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    margin-bottom: 40px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-#contact-intro h2 {
-    font-size: 2.5em;
-    color: #dc3545;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-#contact-intro p {
-    font-size: 1.2em;
-    font-weight: 500;
-    color: #333;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
 }
 
 /* ===================================== */
@@ -652,44 +751,34 @@ section h2 {
 
 .info-convergente {
     text-align: center;
-    font-size: 1.15em;
-    line-height: 1.6;
-    padding: 20px 10px;
+    font-size: 1rem;
+    line-height: 1.8;
+    padding: 32px 24px;
     background-color: #fff0f0;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    color: #333;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    color: var(--text-dark);
     max-width: 900px;
     margin: 0 auto;
 }
 
 .info-convergente p {
-    margin-bottom: 20px;
-}
-
-.info-convergente strong {
-    color: #dc3545;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 5px;
-    font-size: 1.2em;
+    margin-bottom: 1.5rem;
 }
 
 .mensaje-fibra {
     text-align: center;
-    font-weight: bold;
-    font-size: 1.6em;
-    color: #dc3545;
-    margin: 30px 0;
+    margin: 40px 0;
 }
 
 .parrafo-fibra {
     text-align: center;
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #444;
-    margin: 15px auto;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin: 20px auto;
     max-width: 800px;
+    font-weight: 400;
 }
 
 /* ===================================== */
@@ -698,82 +787,93 @@ section h2 {
 
 .grid-ventajas, .grid-perfiles {
     display: flex;
-    gap: 20px;
+    gap: 28px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 32px;
 }
 
 .ventaja, .perfil {
     background-color: #fff0f0;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 300px;
+    padding: 28px;
+    border-radius: 12px;
+    max-width: 320px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ventaja:hover, .perfil:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 .ventaja img, .perfil img {
     width: 100%;
     height: auto;
-    border-radius: 6px;
-    margin-bottom: 15px;
+    border-radius: 8px;
+    margin-bottom: 16px;
 }
 
 .ventaja h3, .perfil h3 {
-    color: #d40000;
-    font-size: 1.1em;
-    margin-bottom: 10px;
+    color: var(--primary-red);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.ventaja p, .perfil p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    font-weight: 400;
 }
 
 .job-card {
-    background-color: #ffffff;
+    background-color: var(--white);
     border: 2px solid #ffbcbc;
-    padding: 25px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 /* ===================================== */
-/* TARIFAS STYLES - REPLACED FOR pagina_tarifas.html */
+/* TARIFAS STYLES */
 /* ===================================== */
 
-/* Dark theme for tarifas page */
 body.tarifas-page {
     background-color: #000000;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     text-align: center;
 }
 
-/* Main title */
 .tarifas-page .titulo-principal {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', 'Poppins', sans-serif;
     font-size: 3rem;
     color: #ff002b;
     margin: 30px 0;
     text-shadow: 0 0 10px #ff00f2;
+    font-weight: 700;
 }
 
-/* Subtitle */
 .tarifas-page .subtitulo {
     font-size: 2rem;
     color: #ff3366;
     margin-bottom: 20px;
     text-transform: uppercase;
+    font-weight: 600;
 }
 
-/* Section container */
 .tarifas-page .seccion-tarifas {
     padding: 40px 20px;
     border-top: 2px solid #333;
     background-color: #000000;
 }
 
-/* Tarifas grid */
 .tarifas-page .tarifas-grid,
 .tarifas-page .contenedor-tarifas {
     display: flex;
@@ -783,7 +883,6 @@ body.tarifas-page {
     padding: 40px 0;
 }
 
-/* Tarifa card */
 .tarifas-page .tarifa {
     background-color: #1a1a1a;
     border-radius: 10px;
@@ -849,7 +948,6 @@ body.tarifas-page {
     text-decoration: none;
 }
 
-/* Botón volver estilos */
 .boton-volver {
     position: fixed;
     bottom: 30px;
@@ -871,37 +969,63 @@ body.tarifas-page {
     background-color: #00ccaa;
 }
 
-/* Responsive for tarifas page */
-@media (max-width: 768px) {
-    .tarifas-page .tarifas-grid,
-    .tarifas-page .contenedor-tarifas {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px 0;
-    }
-    .tarifas-page .tarifa {
-        width: 90vw;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-    .tarifas-page .titulo-principal {
-        font-size: 2.2rem;
-    }
-    .tarifas-page .subtitulo {
-        font-size: 1.3rem;
-    }
+/* ===================================== */
+/* FOOTER STYLES */
+/* ===================================== */
+
+footer {
+    background-color: #ff0000;
+    color: white;
+    text-align: center;
+    padding: 24px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.08);
+    margin-top: 24px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.9375rem;
+    align-items: center;
+}
+
+.footer-content .separator {
+    opacity: 0.7;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: white;
+}
+
+footer span {
+    color: white;
+    font-weight: 400;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* ===================================== */
-/* ADDITIONAL CSS FOR MAIN.JS FEATURES */
+/* ADDITIONAL FEATURES */
 /* ===================================== */
 
-/* Back to top button */
 .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #dc3545;
+    background-color: var(--primary-red);
     color: white;
     border: none;
     border-radius: 50%;
@@ -917,7 +1041,7 @@ body.tarifas-page {
 }
 
 .back-to-top:hover {
-    background-color: #b1001d;
+    background-color: var(--dark-red);
     transform: scale(1.1);
 }
 
@@ -926,7 +1050,6 @@ body.tarifas-page {
     visibility: visible;
 }
 
-/* Enhanced FAQ accordion */
 .faq-question-clickable {
     cursor: pointer;
     transition: color 0.3s ease;
@@ -934,7 +1057,7 @@ body.tarifas-page {
 }
 
 .faq-question-clickable:hover {
-    color: #b1001d;
+    color: var(--dark-red);
 }
 
 .faq-answer-open {
@@ -943,7 +1066,6 @@ body.tarifas-page {
     padding-top: 15px;
 }
 
-/* Enhanced modal */
 .modal-open {
     display: block !important;
 }
@@ -952,7 +1074,6 @@ body.tarifas-page {
     overflow: hidden;
 }
 
-/* Service item pulse animation */
 .pulsing {
     animation: pulse 0.8s infinite alternate;
 }
@@ -962,57 +1083,29 @@ body.tarifas-page {
     100% { transform: scale(1.05); }
 }
 
-/* Enhanced image hover */
 .js-hover-enabled {
     transition: transform 0.4s ease;
     cursor: pointer;
 }
 
-/* Form input focus states */
 .form-input-focused label {
-    color: #b1001d;
+    color: var(--dark-red);
     transform: scale(0.95);
 }
 
-/* Return button styling */
-.boton-volver {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    padding: 12px 20px;
-    background-color: #ff0033;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
-    box-shadow:
-        0 0 5px #ff0033,
-        0 0 10px #ff0033,
-        0 0 20px #ff0033,
-        0 0 30px #ff0033;
-    transition: background-color 0.3s ease;
-    z-index: 9999;
-}
-
-.boton-volver:hover {
-    background-color: #cc002a;
-}
-
-/* Alert system styles */
 .alert {
     position: fixed;
     top: 20px;
     right: 20px;
-    padding: 15px 20px;
-    border-radius: 5px;
+    padding: 16px 24px;
+    border-radius: 8px;
     z-index: 9999;
-    max-width: 300px;
-    font-size: 14px;
+    max-width: 320px;
+    font-size: 0.9375rem;
     opacity: 1;
     transition: opacity 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-weight: 500;
 }
 
 .alert-success {
@@ -1037,7 +1130,6 @@ body.tarifas-page {
     opacity: 0;
 }
 
-/* Loading indicator */
 .loading-indicator {
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -1048,12 +1140,27 @@ body.tarifas-page {
     pointer-events: none;
 }
 
-/* ===================================== */
-/* SMOOTH SCROLLING */
-/* ===================================== */
-
 html {
     scroll-behavior: smooth;
+}
+
+.about-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
 }
 
 /* ===================================== */
@@ -1089,24 +1196,44 @@ html {
     }
 
     nav ul li a {
-        font-size: 1em;
+        font-size: 0.9375rem;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-title-white {
+        font-size: 1.75rem;
+    }
+
+    .subsection-title {
+        font-size: 1.25rem;
+    }
+
+    .intro-text, .intro-text-white {
+        font-size: 1rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.125rem;
+    }
+
+    .fiber-headline {
+        font-size: 1.375rem;
     }
 
     #hero {
-        padding: 40px 10px;
+        padding: 40px 16px;
     }
 
-    #hero p {
-        font-size: 1em;
+    section {
+        padding: 32px 16px;
     }
 
     .btn {
-        font-size: 1em;
-        padding: 10px 20px;
-    }
-
-    section h2 {
-        font-size: 1.5em;
+        font-size: 0.9375rem;
+        padding: 12px 24px;
     }
 
     .container {
@@ -1115,75 +1242,59 @@ html {
 
     .service-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     footer {
-        background-color: #ff0000;
-        padding: 18px 0;        
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(220, 53, 69, 0.08);
-        margin-top: 18px;       
-        text-align: center;
+        padding: 20px 0;
+        margin-top: 20px;
     }
 
-    footer div {
+    .footer-content {
         flex-direction: column;
-        gap: 5px;
-        font-size: 0.9em;
+        gap: 8px;
+        font-size: 0.875rem;
     }
 
-    footer span {
-        display: block;
+    .footer-content .separator {
+        display: none;
     }
-}
 
-/* ===================================== */
-/* FOOTER STYLES */
-/* ===================================== */
+    .tarifas-page .tarifas-grid,
+    .tarifas-page .contenedor-tarifas {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0;
+    }
 
-footer {
-    background-color: #ff0000;
-    color: white;
-    text-align: center;
-    padding: 18px 0;        
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(220, 53, 69, 0.08);
-    margin-top: 18px;     
-}
+    .tarifas-page .tarifa {
+        width: 90vw;
+        max-width: 350px;
+        margin: 0 auto;
+    }
 
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-    color: white;
-}
+    .tarifas-page .titulo-principal {
+        font-size: 2.2rem;
+    }
 
-footer span {
-    color: white;
-}
+    .tarifas-page .subtitulo {
+        font-size: 1.3rem;
+    }
 
-footer a {
-    color: white;
-    text-decoration: none;
-}
+    .about-flex {
+        flex-direction: column;
+        gap: 24px;
+    }
 
-footer a:hover {
-    text-decoration: underline;
-}
+    .grid-ventajas, .grid-perfiles {
+        gap: 20px;
+    }
 
-.about-flex {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    flex-wrap: wrap;
-}
+    #contact-form {
+        padding: 28px;
+    }
 
-.about-text {
-    flex: 2;
-    min-width: 300px;
-}
-
-.about-image {
-    flex: 1;
-    min-width: 200px;
-    text-align: center;
+    .contact-cards {
+        gap: 20px;
+    }
 }
