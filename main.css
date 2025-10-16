@@ -1158,9 +1158,9 @@ html {
 }
 
 /*=========================*/
-/* BURGUER MENU */
+/* BURGER MENU */
 /*=========================*/
-.burguer-menu {
+.burger-menu {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -1171,7 +1171,7 @@ html {
     z-index: 1001;
 }
 
-.burguer-menu span {
+.burger-menu span {
     width: 28px;
     height: 3px;
     background-color: var(--primary-red);
@@ -1180,11 +1180,11 @@ html {
 }
 
 /*Animation when active*/
-.burguer-menu.active span:nth-child(1) {
+.burger-menu.active span:nth-child(1) {
     transform: rotate(45deg) translate(8px, 8px);
 }
 
-.burguer-menu.active span:nth-child(3) {
+.burger-menu.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px)
 }
 
