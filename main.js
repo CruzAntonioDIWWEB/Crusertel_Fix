@@ -473,6 +473,123 @@ const CrusertelApp = {
     }
 };
 
+// ===============
+// HEADER
+// ===============
+
+// Simple header loader with debugging
+console.log('main.js loaded - starting header injection');
+
+function loadHeader() {
+    console.log('loadHeader function called');
+    
+    fetch('header.html')
+        .then(response => {
+            console.log('Fetch response status:', response.status);
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.status);
+            }
+            return response.text();
+        })
+        .then(html => {
+            console.log('Header HTML loaded successfully');
+            // Create a temporary container to hold the header
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
+            const headerElement = tempDiv.firstElementChild;
+            
+            // Insert header at the beginning of body
+            document.body.insertBefore(headerElement, document.body.firstChild);
+            console.log('Header inserted into page');
+            
+            // Initialize burger menu
+            initBurgerMenu();
+        })
+        .catch(error => {
+            console.error('Error loading header:', error);
+            // Fallback: create a basic header if loading fails
+            createFallbackHeader();
+        });
+}
+
+function createFallbackHeader() {
+    console.log('Creating fallback header');
+    const fallbackHeader = `
+        <header class="fade-in-down-initial">
+            <div class="container header-content">
+                <div class="logo">
+                    <a href="pagina_Inicio.html"><img src="img/imagen_logo_crusertel.jpg" alt="Logo Crusertel"></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="pagina_servicios.html">Servicios</a></li>
+                        <li><a href="pagina_faq.html">Preguntas Frecuentes</a></li>
+                        <li><a href="pagina_contacto.php">Contacto</a></li>
+                        <li><a href="pagina_unete.html">Únete</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    `;
+    document.body.insertAdjacentHTML('afterbegin', fallbackHeader);
+}
+
+function initBurgerMenu() {
+    console.log('Initializing burger menu');
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (!burgerMenu) {
+        console.log('No burger menu found on this page');
+        return;
+    }
+
+    console.log('Burger menu element found:', burgerMenu);
+
+    // Create overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    document.body.appendChild(overlay);
+
+    function toggleMenu() {
+        console.log('Toggling menu');
+        burgerMenu.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    // Event listeners
+    burgerMenu.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on links
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Close menu with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+    
+    console.log('Burger menu initialized successfully');
+}
+
+// Load header when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadHeader);
+} else {
+    loadHeader();
+}
+
 // ===================================
 // INITIALIZE APPLICATION
 // ===================================
@@ -490,3 +607,4 @@ window.addEventListener('beforeunload', () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = CrusertelApp;
 }
+
